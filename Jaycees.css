@@ -7,7 +7,7 @@
   
   
   .navbar {
-  background-color: #ffffff;
+  background-color: #f8f9fa;
   padding: 20px 50px;
   display: flex;
   justify-content: space-between;
@@ -104,10 +104,9 @@
   }
   }
   
-
   
 
-
+  
 
 
 
@@ -123,269 +122,275 @@
 /* General container styling */
 
 
-    .row {
-        display: flex;
-        /* flex-wrap: wrap; */
-        justify-content: space-evenly;
-        gap: 25px;
-    }
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 25px;
+}
 
 /* Business card styling */
 .business-card {
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(145deg, #ffffff, #e9ecef);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.08);
-    border-radius: 12px;
-    overflow: hidden;
-    flex: 1 1 calc(45% - 20px);
-    max-width: 45%;
-    transition: all 0.3s ease;
+display: flex;
+flex-direction: column;
+background: linear-gradient(145deg, #ffffff, #e9ecef);
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.08);
+border-radius: 12px;
+overflow: hidden;
+flex: 1 1 calc(45% - 20px);
+max-width: 45%;
+transition: all 0.3s ease;
 }
 
 .business-card:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+transform: translateY(-8px) scale(1.03);
+box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Photo section styling */
 .photo-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: #6a8fde;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 20px;
+background-color: #6a8fde;
 }
 
 .photo-section img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid #f0f0f0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    
+width: 200px;
+height: 200px;
+object-fit: cover;
+border-radius: 50%;
+border: 5px solid #f0f0f0;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+transition: all 0.3s ease;
+
 }
 
 .photo-section img:hover {
-    transform: scale(1.15);
+transform: scale(1.15);
 }
 
 /* Details section styling */
 .details-section {
-    padding: 25px;
-    /* text-align: center; */
-    /* background: #ffffff; */
+padding: 25px;
+/* text-align: center; */
+/* background: #ffffff; */
 }
 
 .details-section h2 {
-    font-size: 1.8rem;
-    color: #333333;
-    margin-bottom: 15px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: capitalize;
+font-size: 1.8rem;
+color: #333333;
+margin-bottom: 15px;
+font-weight: 700;
+letter-spacing: 1px;
+text-transform: capitalize;
 }
 
 .details-section p {
-    font-size: 1rem;
-    margin-bottom: 12px;
-    color: #555555;
-    line-height: 1.7;
-    letter-spacing: 0.5px;
+font-size: 1rem;
+margin-bottom: 12px;
+color: #555555;
+line-height: 1.7;
+letter-spacing: 0.5px;
 }
 
 .details-section a {
-    display: inline-block;
-    text-decoration: none;
-    color: #0056b3;
-    font-weight: 600;
-    margin-top: 15px;
-    border: 2px solid #0056b3;
-    border-radius: 8px;
-    padding: 10px 18px;
-    transition: all 0.3s ease;
+display: inline-block;
+text-decoration: none;
+color: #0056b3;
+font-weight: 600;
+margin-top: 15px;
+border: 2px solid #0056b3;
+border-radius: 8px;
+padding: 10px 18px;
+transition: all 0.3s ease;
 }
 
 .details-section a:hover {
-    background-color: #0056b3;
-    color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3);
+background-color: #0056b3;
+color: #ffffff;
+box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3);
 }
 
 /* Business photo styling */
 .business-photo {
-    margin-top: 15px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+margin-top: 15px;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .business-photo img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    transition: transform 0.3s ease;
+width: 100%;
+height: auto;
+border-radius: 12px;
+transition: transform 0.3s ease;
 }
 
 .business-photo img:hover {
-    transform: scale(1.07);
+transform: scale(1.07);
 }
 
 /* Responsive Design */
 
 /* Medium Devices (tablets) */
 @media (max-width: 768px) {
-    .business-card {
-        max-width: 100%;
-        flex: 1 1 100%;
-    }
+.business-card {
+    max-width: 100%;
+    flex: 1 1 100%;
+}
 
-    .photo-section {
-        padding: 15px;
-    }
+.photo-section {
+    padding: 15px;
+}
 
-    .details-section {
-        padding: 20px;
-    }
+.details-section {
+    padding: 20px;
+}
 
-    .details-section h2 {
-        font-size: 1.5rem;
-    }
+.details-section h2 {
+    font-size: 1.5rem;
+}
 
-    .details-section p {
-        font-size: 0.95rem;
-    }
+.details-section p {
+    font-size: 0.95rem;
+}
 }
 
 /* Small Devices (mobile) */
 @media (max-width: 600px) {
-    .business-card {
-        flex: 1 1 100%;
-    }
+.business-card {
+    flex: 1 1 100%;
+}
 
-    .photo-section img {
-        width: 120px;
-        height: 120px;
-    }
+.photo-section img {
+    width: 120px;
+    height: 120px;
+}
 
-    .details-section h2 {
-        font-size: 1.3rem;
-    }
+.details-section h2 {
+    font-size: 1.3rem;
+}
 
-    .details-section p {
-        font-size: 0.9rem;
-    }
+.details-section p {
+    font-size: 0.9rem;
+}
 
-    .details-section a {
-        padding: 8px 12px;
-        font-size: 0.9rem;
-    }
+.details-section a {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+}
 }
 
 /* Very Small Devices (Mobile Portrait) */
 @media (max-width: 480px) {
-    .photo-section img {
-        width: 106px;
-        height: 137px;
-    }
+.photo-section img {
+    width: 106px;
+    height: 137px;
+}
 
-    .details-section h2 {
-        font-size: 1.2rem;
-    }
+.details-section h2 {
+    font-size: 1.2rem;
+}
 
-    .details-section p {
-        font-size: 0.85rem;
-    }
+.details-section p {
+    font-size: 0.85rem;
+}
 
-    .details-section a {
-        padding: 6px 10px;
-        font-size: 0.85rem;
-    }
+.details-section a {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+}
 
-    .business-photo {
-        height: 180px;
-    }
+.business-photo {
+    height: 180px;
+}
 }
 
 /* Extra Styling for Bold and Accent Text */
 .bold {
-    font-weight: bolder;
-    color: #333333;
+font-weight: bolder;
+color: #333333;
 }
 
 .accent {
-    color: #0056b3;
-    font-weight: bold;
+color: #0056b3;
+font-weight: bold;
 }
 
 
 
 .business-card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: calc(33.33% - 20px);
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
+border: 1px solid #ddd;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+width: calc(33.33% - 20px);
+background-color: #fff;
+display: flex;
+flex-direction: column;
 }
 
 /* .photo-section img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+width: 100%;
+height: auto;
+object-fit: cover;
 } */
 
 .details-section {
-    padding: 15px;
+padding: 15px;
 }
 
 .details-section h2 {
-    font-size: 1.5rem;
-    margin: 0 0 10px;
+font-size: 1.5rem;
+margin: 0 0 10px;
 }
 
 .details-section p {
-    margin: 5px 0;
+margin: 5px 0;
 }
 
 .details-section .bold {
-    font-weight: bold;
+font-weight: bold;
 }
 
 .business-photo img {
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
+width: 100%;
+height: auto;
+margin-top: 10px;
 }
 
 .details-section a {
-    display: inline-block;
-    margin-top: 10px;
-    text-decoration: none;
-    color: #007BFF;
-    font-weight: bold;
+display: inline-block;
+margin-top: 10px;
+text-decoration: none;
+color: #007BFF;
+font-weight: bold;
 }
 
 .details-section a:hover {
-    text-decoration: underline;
+text-decoration: underline;
 }
 
 @media (max-width: 768px) {
-    .business-card {
-        width: calc(50% - 20px);
-    }
+.business-card {
+    width: calc(50% - 20px);
+}
 }
 
 @media (max-width: 480px) {
-    .business-card {
-        width: 100%;
-    }
+.business-card {
+    width: 100%;
 }
+} 
 
+.extra{
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 
 
 
