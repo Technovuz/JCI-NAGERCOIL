@@ -7,7 +7,7 @@
   
   
   .navbar {
-  background-color: #f8f9fa;
+  background-color: #ffffff;
   padding: 20px 50px;
   display: flex;
   justify-content: space-between;
@@ -160,7 +160,7 @@ box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
 
 .photo-section img {
     width: 230px;
-    height: 245px;
+    height: 257px;
     object-fit: cover;
     border-radius: 50%;
     border: 6px solid #ffffff;
@@ -169,7 +169,7 @@ box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
 }
 
 .photo-section img:hover {
-    transform: scale(1.2) rotate(5deg);
+    transform: scale(1.2) rotate(0deg);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     border-color: #6a8fde;
 }
@@ -298,8 +298,8 @@ box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3);
 /* Very Small Devices (Mobile Portrait) */
 @media (max-width: 480px) {
 .photo-section img {
-    width: 106px;
-    height: 137px;
+    width: 124px;
+        height: 124px;
 }
 
 .details-section h2 {
@@ -317,6 +317,15 @@ box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3);
 
 .business-photo {
     height: 180px;
+}
+.business-photo {
+    width: 285px;
+    height: 300px;
+    margin-top: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+    /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); */
+    position: relative;
 }
 }
 

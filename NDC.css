@@ -624,7 +624,7 @@ to {
         rgba(0, 151, 215, 0.1) 26%,
         #ffffff 26%
       ),
-      url("https://europe.jci.cc/wp-content/uploads/2021/03/bg1.jpeg");
+      ;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -676,6 +676,24 @@ to {
     font-size: 16px;
     color: #666;
   }
+/* Hover text styling */
+.hover-text {
+  position: absolute;
+  bottom: 114px; /* Position the text at the bottom of the image */
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  color: #fff; /* Text color */
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth appearance */
+}
+
+/* Show the text on hover */
+.image-container:hover .hover-text {
+  opacity: 1; /* Fully visible on hover */
+}
 
 
 
