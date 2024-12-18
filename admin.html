@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+       * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+
+.navbar {
+  background-color: #f8f9fa;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links li:hover > a {
+  color: #0173ff;
+}
+.navbar-nav{
+  gap: 50px;
+  font-weight: 700;
+  color: black;
+}
+
+.navbar-brand img {
+  height: 70px;
+  width: auto;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.dropdown-item {
+  font-size: 17px;
+padding: 10px !important;
+}
+
+.social-icons a {
+  color: #333;
+  font-size: 20px;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+.contact-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  /* border-radius: 5px; */
+}
+
+.contact-btn:hover {
+  background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  .navbar-nav{
+    gap: 0px;
+  }
+}
+
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px;
+        }
+
+        .team-card {
+            border: 1px solid #ddd;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 32px); /* 3 cards per row */
+            box-sizing: border-box;
+            max-width: 100%;
+        }
+
+        /* For smaller screens, adjust layout */
+        @media (max-width: 768px) {
+            .team-card {
+                width: calc(50% - 32px); /* 2 cards per row */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .team-card {
+                width: 100%; /* 1 card per row on smaller screens */
+            }
+        }
+
+        .team-photo {
+            width: 100%;
+            max-height: 150px;
+            object-fit: contain;
+            margin-bottom: 16px;
+        }
+
+        .edit-input {
+            width: 80%;
+            margin: 8px 0;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .team-buttons button {
+            margin: 8px;
+            padding: 8px 16px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .team-buttons button:disabled {
+            background-color: #ccc;
+        }
+
+        .team-buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Add more space for the cards */
+        #add-card-btn {
+            margin: 20px auto;
+            display: block;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #add-card-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    
+
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="photos/nav-logo.webp" alt="JCI Nagercoil Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button">
+                            About
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="/about.html">Programs</a></li>
+                            <li><a class="dropdown-item" href="board.html">Board of Directors</a></li>
+                            <li><a class="dropdown-item" href="jclnagarcoil.html">JCI Nagercoil HQ</a></li>
+                            <li><a class="dropdown-item" href="local.html">Local Organisations</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="NDC.html" id="edcDropdown" role="button">
+                            NDC
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="edcDropdown">
+                            <li><a class="dropdown-item" href="NDC2024.html">NDC Team 2024</a></li>
+                            <li><a class="dropdown-item" href="skils.html">Skills Development <br> Platform</a></li>
+                            <li><a class="dropdown-item" href="Intensive.html">Intensive Support</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="transfer.html">NLO Know-How Transfer</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button">
+                            Programs & Events
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+                            <li><a class="dropdown-item" href="Conference .html">Conference 2024</a></li>
+                            <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Jaycees.html"> Jaycees Business</a>
+                    </li>
+
+                </ul>
+                <div class="d-flex align-items-center">
+                    <div class="social-icons me-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <a href="#" class="contact-btn">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container" id="team-container"></div>
+
+    <button id="add-card-btn" onclick="addNewCard()">Add New Member</button>
+
+    <script>
+        const teamContainer = document.getElementById('team-container');
+
+        // Load team data from localStorage on page load
+        function loadTeamData() {
+            const teamData = JSON.parse(localStorage.getItem("teamData")) || [];
+            teamContainer.innerHTML = ''; // Clear existing cards
+
+            // Limit to 30 cards
+            const limitedTeamData = teamData.slice(0, 30);
+
+            // Generate team cards dynamically
+            limitedTeamData.forEach(member => {
+                createCard(member);
+            });
+        }
+
+        // Create and display a team card
+        function createCard(member) {
+            const card = document.createElement('div');
+            card.className = 'team-card';
+            card.dataset.id = member.id;
+            card.innerHTML = `
+                <img src="${member.photo}" alt="${member.name}" class="team-photo" id="photo-${member.id}">
+                <div class="team-info">
+                    <input type="text" id="name-${member.id}" class="edit-input" value="${member.name}">
+                    <input type="text" id="role-${member.id}" class="edit-input" value="${member.role}">
+                </div>
+                <input type="file" id="upload-${member.id}" class="upload-input" onchange="uploadImage(${member.id})">
+                <div class="team-buttons">
+                    <button onclick="saveChanges(${member.id})">Save</button>
+                    <button onclick="deleteCard(${member.id})">Delete</button>
+                </div>
+            `;
+            teamContainer.appendChild(card);
+        }
+
+        // Function to upload image and update preview
+        function uploadImage(id) {
+            const input = document.getElementById(`upload-${id}`);
+            const photo = document.getElementById(`photo-${id}`);
+            const file = input.files[0];
+
+            if (file) {
+                const fileType = file.type.split('/')[0];
+                const maxSizeInMB = 2;
+                const maxSizeInBytes = maxSizeInMB * 1024 * 1024;
+
+                if (fileType === 'image') {
+                    if (file.size > maxSizeInBytes) {
+                        alert(`The file is too large. Please upload an image smaller than ${maxSizeInMB} MB.`);
+                    } else {
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                            photo.src = e.target.result;
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                } else {
+                    alert('Please upload a valid image file!');
+                }
+            }
+        }
+
+        // Function to save changes to localStorage
+        function saveChanges(id) {
+            const name = document.getElementById(`name-${id}`).value;
+            const role = document.getElementById(`role-${id}`).value;
+            const photo = document.getElementById(`photo-${id}`).src;
+
+            let teamData = JSON.parse(localStorage.getItem("teamData")) || [];
+
+            const index = teamData.findIndex(member => member.id === id);
+            if (index !== -1) {
+                teamData[index] = { id, name, role, photo };
+            } else {
+                teamData.push({ id, name, role, photo });
+            }
+
+            localStorage.setItem("teamData", JSON.stringify(teamData));
+            alert("Changes saved!");
+        }
+
+        // Function to delete a card
+        function deleteCard(id) {
+            let teamData = JSON.parse(localStorage.getItem("teamData")) || [];
+            teamData = teamData.filter(member => member.id !== id);
+            localStorage.setItem("teamData", JSON.stringify(teamData));
+            loadTeamData();  // Reload data after deletion
+            alert("Member deleted!");
+        }
+
+        // Function to add a new card
+        function addNewCard() {
+            let teamData = JSON.parse(localStorage.getItem("teamData")) || [];
+            const newId = teamData.length > 0 ? teamData[teamData.length - 1].id + 1 : 1;
+            const newMember = {
+                id: newId,
+                name: "New Member",
+                role: "New Role",
+                photo: "photos/default.jpg"
+            };
+            if (teamData.length < 30) {
+                teamData.push(newMember);
+                localStorage.setItem("teamData", JSON.stringify(teamData));
+                createCard(newMember);
+                alert("New member is added!");
+            } else {
+                alert("Maximum number of members reached (30 cards).");
+            }
+        }
+
+        // Load team data on page load
+        loadTeamData();
+    </script>
+</body>
+</html>

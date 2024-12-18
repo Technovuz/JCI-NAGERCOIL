@@ -1,0 +1,403 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.navbar {
+background-color: #f8f9fa;
+padding: 20px 50px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+display: flex;
+list-style: none;
+}
+
+.nav-links a {
+display: block;
+padding: 10px 15px;
+color: #333;
+text-decoration: none;
+font-size: 16px;
+font-weight: 700 !important;
+text-transform: uppercase;
+transition: color 0.3s ease-in-out;
+}
+
+.nav-links li:hover > a {
+color: #0173ff;
+}
+.navbar-nav{
+gap: 50px;
+font-weight: 700;
+color: black;
+}
+
+.navbar-brand img {
+height: 70px;
+width: auto;
+}
+
+.dropdown:hover .dropdown-menu {
+display: block;
+}
+
+.dropdown-menu {
+display: none;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+border-radius: 5px;
+animation: fadeIn 0.3s ease-in-out;
+}
+
+.dropdown-item {
+font-size: 17px;
+padding: 10px !important;
+}
+
+.social-icons a {
+color: #333;
+font-size: 20px;
+margin-right: 15px;
+transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+color: #007bff;
+}
+
+.contact-btn {
+padding: 10px 20px;
+background-color: #007bff;
+color: white;
+text-decoration: none;
+font-size: 14px;
+font-weight: bold;
+border-radius: 20px;
+text-transform: uppercase;
+/* border-radius: 5px; */
+}
+
+.contact-btn:hover {
+background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+from {
+    opacity: 0;
+}
+to {
+    opacity: 1;
+}
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+.navbar-nav{
+  gap: 0px;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Programs{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    justify-content: center;
+    gap: 20px;
+}
+.Programs h5{
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.521);
+}
+.Programs p{
+    width: 55%;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.521);
+}
+.Programs h1{
+    font-size: 70px;
+    color: black;
+    font-weight: 400;
+}
+.project{
+    background-image: linear-gradient(270deg, rgba(0, 151, 215, 0.1) 26%, #ffffff 26%), url(https://europe.jci.cc/wp-content/uploads/2021/03/bg1.jpeg) !important;  
+      color: #ffffff;
+    /* padding: 4px 15px; */
+    text-align: center;
+    padding: 10PX;
+}
+
+
+
+.cardcompany {
+    background-color: white !important;
+    overflow: hidden;
+    padding: 0;
+    /* width: 150%;  */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    height: 220PX;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* gap: 40PX; */
+}
+
+.cardcompany img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.cardcompany:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* .row .col-md-6 {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+} */
+
+@media (max-width: 768px) {
+  
+    .cardcompany img {
+        height: auto;
+    }
+    .cardcompany{
+        height: fit-content;
+    }
+}
+@media screen and (max-width: 480px) {
+    .Programs p {
+        width: 100%;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.521);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Footer Styles */
+footer {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+  height: 550px ;
+  align-content: center;
+}
+
+  .footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px !important;
+
+  }
+  
+  
+  
+  .social-item i {
+    font-size: 24px;
+    color: #1d4abb;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .social-item p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    margin: 0;
+  }
+  
+  .logo-section {
+    margin: 20px 0;
+    filter: grayscale(100%);
+
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-links a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .footer-bottom {
+    font-size: 12px;
+    color: #777;
+  }
+  
+  .footer-bottom a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      background-color: white;
+      padding: 20px 0;
+      z-index: 999;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  
+    .contact-btn {
+      margin-top: 20px;
+    }
+  
+    .social-links {
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  
+    .social-item {
+      height: auto;
+      width: 100%;
+      max-width: 150px;
+    }
+  
+    .footer-links {
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .nav-links li {
+      margin: 0 10px;
+    }
+  
+    .footer-container {
+      padding: 20px;
+    }
+  
+    .social-links {
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+  
+    .social-item i {
+      font-size: 20px;
+    }
+  
+    .social-item p {
+      font-size: 12px;
+    }
+  
+    .footer-links a {
+      font-size: 14px;
+    }
+  }
+  /* Footer Styles */
+  .social-links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    width: 100%;
+    height: fit-content !important;
+  }
+  
+  .social-item {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.136);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    max-width: 200px; /* Adjust max-width as needed */
+    height: 130px;
+  }
+  .social-item:hover{
+    box-shadow: 1px 1px 18px rgb(164, 212, 234);
+  }
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .social-links {
+      gap: 20px;
+    }
+  
+    .social-item {
+      width: 100%; /* Full-width for smaller screens */
+      max-width: 100%; /* Remove max-width constraint */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .social-links {
+      gap: 10px;
+      width: 70%;
+    }
+  
+    .social-item {
+      padding: 15px;
+      width: 100%; /* Ensure full width */
+    }
+  }
+  
