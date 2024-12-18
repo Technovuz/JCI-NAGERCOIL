@@ -135,7 +135,7 @@ display: flex;
 flex-direction: column;
 background: linear-gradient(145deg, #ffffff, #e9ecef);
 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.08);
-border-radius: 12px;
+/* border-radius: 12px; */
 overflow: hidden;
 flex: 1 1 calc(45% - 20px);
 max-width: 45%;
@@ -149,26 +149,29 @@ box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
 
 /* Photo section styling */
 .photo-section {
-display: flex;
-justify-content: center;
-align-items: center;
-padding: 20px;
-background-color: #6a8fde;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #6a8fde, #4a6fb2);
+    /* border-radius: 15px; */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .photo-section img {
-width: 200px;
-height: 200px;
-object-fit: cover;
-border-radius: 50%;
-border: 5px solid #f0f0f0;
-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-transition: all 0.3s ease;
-
+    width: 230px;
+    height: 245px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #ffffff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease-in-out;
 }
 
 .photo-section img:hover {
-transform: scale(1.15);
+    transform: scale(1.2) rotate(5deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    border-color: #6a8fde;
 }
 
 /* Details section styling */
@@ -217,11 +220,11 @@ box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3);
 /* Business photo container */
 .business-photo {
     width: 400px; /* Set width to 400px */
-    height: 300px; /* Set height to 300px (adjustable based on your preference) */
+    height: 400px; /* Set height to 300px (adjustable based on your preference) */
     margin-top: 15px;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); */
     position: relative; /* To allow the hover effect to work smoothly */
 }
 
@@ -399,6 +402,7 @@ text-decoration: underline;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    /* background-color: #0056b3; */
 }
 
 
