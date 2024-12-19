@@ -15,36 +15,50 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   
-  .nav-links {
+  .nav-link {
   display: flex;
   list-style: none;
+  color: black !important;
+  font-size: 15px;
   }
   .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
-    display: flex
-  ;
+    display: flex;
     flex-wrap: inherit;
     align-items: center;
     justify-content: space-around;
     width: 95%;
   }
-  .nav-links a {
+  .nav-link a {
   display: block;
   padding: 10px 15px;
-  color: #333;
+  color: #000000 !important;
   text-decoration: none;
-  font-size: 16px;
+  /* font-size: 16px; */
   font-weight: 700 !important;
   text-transform: uppercase;
   transition: color 0.3s ease-in-out;
   }
-  
-  .nav-links li:hover > a {
-  color: #0173ff;
+  .nav-link:hover{
+    color: blue !important;
   }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   .navbar-nav{
   gap: 50px;
-  font-weight: 700;
-  color: black;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
   }
   
   .navbar-brand img {
@@ -67,7 +81,9 @@
   font-size: 17px;
   padding: 10px !important;
   }
-  
+  .dropdown-item:hover{
+    color: #0094d7 !important;
+  }
   .social-icons a {
   color: #333;
   font-size: 20px;
@@ -120,7 +136,31 @@
   }
   
   
-
+  
+  
+  
+  
+  /* Optional: You can apply specific styles to the underline span */
+  .underline {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #007bff;
+    transition: width 0.4s ease;
+  }
+  
+  
+  
+  
+  
+  
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+  
   
 
 
