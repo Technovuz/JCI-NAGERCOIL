@@ -513,6 +513,10 @@ img {
   .empty-column {
     display: none;
   }
+  .mission-vision-section .container {
+    max-width: 100%;
+    padding-bottom: 7%;
+}
 }
 
 

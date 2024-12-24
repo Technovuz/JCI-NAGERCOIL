@@ -317,6 +317,12 @@ h1, h2, h3, h4, h5, h6 {
         max-width: 100%;
         flex: 1 1 100%;
     }
+    .jci-section {
+      text-align: center;
+      padding: 50px 10px;
+      background-image: linear-gradient(270deg, rgba(0, 151, 215, 0.1) 9%, #ffffff 2%), url(https://europe.jci.cc/wp-content/uploads/2021/03/bg1.jpeg) !important;
+      font-family: 'Arial', sans-serif;
+  }
 }
 
 

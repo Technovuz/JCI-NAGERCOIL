@@ -269,8 +269,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
 
-  @media (max-width: 480px) {
-    
+  @media screen and (min-width: 0px) and (max-width: 480px) {    
   .team-section-text h1{
     font-size:28px;
     /* line-height: 1.1em; */
@@ -296,6 +295,9 @@ h1, h2, h3, h4, h5, h6 {
     gap: 25px !important;
     justify-content: center;
     text-align: center;
+  }
+  .team-section{
+    padding: 0px;
   }
   }
 
