@@ -381,6 +381,7 @@ box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3);
     overflow: hidden;
     /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); */
     position: relative;
+    right: 8px;
 }
 .extra {
     height: 477px;
