@@ -472,6 +472,9 @@ footer {
     filter: grayscale(0%);
   
   }
+  .social-item i:hover{
+    color: goldenrod !important;
+  }
   
   .footer-links {
     display: flex;

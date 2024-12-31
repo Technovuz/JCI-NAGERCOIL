@@ -339,7 +339,9 @@ footer {
 
   }
   
-  
+  .social-item i:hover{
+    color: goldenrod !important;
+  }
   
   .social-item i {
     font-size: 24px;

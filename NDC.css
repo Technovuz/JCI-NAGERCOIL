@@ -1136,7 +1136,9 @@ h1, h2, h3, h4, h5, h6 {
   
   }
   
-  
+  .social-item i:hover{
+    color: goldenrod !important;
+  }
   
   .social-item i {
     font-size: 24px;
