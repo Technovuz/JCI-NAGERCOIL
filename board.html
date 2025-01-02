@@ -65,7 +65,7 @@
             </div>
         </div>
     </nav>
-    <br>
+  
 
 
 
@@ -80,8 +80,9 @@
 
 
     
-    <div id="team-container"></div>
-
+    <div id="team-container">
+      </div>
+      
 
 
 
@@ -206,119 +207,6 @@ document.addEventListener("DOMContentLoaded", loadUserPageData);
 
     loadTeamData();
 </script>
-
-
-
-
-<!-- 
-
-<script>
-function loadData(teamId) {
-    const nameInput = document.getElementById(`name-${teamId}`);
-    const roleInput = document.getElementById(`role-${teamId}`);
-    const uploadInput = document.getElementById(`upload-${teamId}`);
-    const confirmBtn = document.getElementById(`confirm-${teamId}`);
-    const photoElement = document.getElementById(`photo-${teamId}`);
-
-    if (!nameInput || !roleInput || !uploadInput || !confirmBtn || !photoElement) {
-        console.error(`Elements not found for team ${teamId}`);
-        return;
-    }
-
-    // Load saved data from localStorage
-    const savedName = localStorage.getItem(`name-${teamId}`);
-    const savedRole = localStorage.getItem(`role-${teamId}`);
-    const savedPhoto = localStorage.getItem(`photo-${teamId}`);
-
-    // Update DOM with saved data
-    nameInput.value = savedName || '';
-    roleInput.value = savedRole || '';
-    photoElement.src = savedPhoto || '';
-
-    // Add event listener for confirm button
-    confirmBtn.addEventListener('click', () => {
-        confirmChanges(teamId);
-    });
-}
-
-// Function to open edit mode for a team
-function openEditMode(teamId) {
-    const nameInput = document.getElementById(`name-${teamId}`);
-    const roleInput = document.getElementById(`role-${teamId}`);
-    const uploadInput = document.getElementById(`upload-${teamId}`);
-    const confirmBtn = document.getElementById(`confirm-${teamId}`);
-
-    if (!nameInput || !roleInput || !uploadInput || !confirmBtn) {
-        console.error(`Elements not found for team ${teamId}`);
-        return;
-    }
-
-    nameInput.disabled = false;
-    roleInput.disabled = false;
-    uploadInput.style.display = 'block';
-    confirmBtn.style.display = 'inline-block';
-}
-
-// Function to handle image upload
-function uploadImage(teamId) {
-    const fileInput = document.getElementById(`upload-${teamId}`);
-    const file = fileInput.files[0];
-
-    if (!file) {
-        alert('No file selected. Please select an image.');
-        return;
-    }
-
-    if (!file.type.startsWith('image/')) {
-        alert('Please upload a valid image file.');
-        return;
-    }
-
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        const photoElement = document.getElementById(`photo-${teamId}`);
-        photoElement.src = e.target.result;
-        photoElement.setAttribute('data-updated-src', e.target.result);
-    };
-    reader.readAsDataURL(file);
-}
-
-// Function to confirm changes
-function confirmChanges(teamId) {
-    const nameInput = document.getElementById(`name-${teamId}`);
-    const roleInput = document.getElementById(`role-${teamId}`);
-
-    if (!nameInput.value.trim() || !roleInput.value.trim()) {
-        alert('Name and Role cannot be empty.');
-        return;
-    }
-
-    const photoElement = document.getElementById(`photo-${teamId}`);
-    const updatedPhoto = photoElement.getAttribute('data-updated-src') || photoElement.src;
-
-    // Save changes to localStorage
-    localStorage.setItem(`name-${teamId}`, nameInput.value);
-    localStorage.setItem(`role-${teamId}`, roleInput.value);
-    localStorage.setItem(`photo-${teamId}`, updatedPhoto);
-
-    // Reset UI
-    nameInput.disabled = true;
-    roleInput.disabled = true;
-    document.getElementById(`upload-${teamId}`).style.display = 'none';
-    document.getElementById(`confirm-${teamId}`).style.display = 'none';
-
-    alert('Changes have been saved successfully.');
-}
-
-// Load data when the page loads
-window.onload = function() {
-    const teamCards = document.querySelectorAll('.team-card');
-    teamCards.forEach((card, index) => {
-        loadData(index + 1);
-    });
-};
-
-</script> -->
 
 
 <script src="script.js"></script>

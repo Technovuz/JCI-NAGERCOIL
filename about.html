@@ -64,8 +64,6 @@
             </div>
         </div>
     </nav>
-    <br>
-
 
 
 
@@ -73,13 +71,16 @@
 
     <section class="project">
         <div class="container">
+            <!-- Add Triangle -->
+            <div id="triangle"></div>
+            
             <div class="Programs">
                 <h5>Leadership Development</h5>
                 <h1>Programs</h1>
                 <p>JCI members have the opportunity to participate in several programs to further develop their
                     leadership skills and enhance their creative problem-solving.</p>
             </div>
-
+    
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
                     <div class="cardcompany">
@@ -89,38 +90,32 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
                     <div class="cardcompany">
                         <img src="./photos/Programs_Banner2-2048x630-1.jpeg" alt="">
-
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
                     <div class="cardcompany">
                         <img src="./photos/Programs_Banner3-2048x630-1.jpeg" alt="">
-
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
                     <div class="cardcompany">
                         <img src="./photos/Programs_Banner4-2048x630-1.jpeg" alt="">
-
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
                     <div class="cardcompany">
                         <img src="./photos/Programs_Banner-5-1-2048x630-1.jpeg" alt="">
-
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
                     <div class="cardcompany">
                         <img src="./photos/Programs_Banner-7-2048x630-1.jpeg" alt="">
-
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-
+    
 
 
     <footer>
@@ -192,4 +187,27 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
+
+
+<script>
+    const triangle = document.getElementById("triangle");
+    const container = document.querySelector(".project .container");
+
+    window.addEventListener("scroll", () => {
+        const containerTop = container.offsetTop;
+        const containerHeight = container.offsetHeight;
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+
+        // Only move the triangle if the container is in the viewport
+        if (scrollY + windowHeight > containerTop && scrollY < containerTop + containerHeight) {
+            const relativeScroll = Math.min(
+                Math.max(scrollY - containerTop, 0),
+                containerHeight - triangle.offsetHeight
+            );
+            triangle.style.top = `${relativeScroll}px`; // Move triangle within the container
+        }
+    });
+</script>
+
 </html>

@@ -205,11 +205,10 @@
             </div>
       
           </div>
+          <div id="triangle"></div>
         </div>
       </section>
       
-
-
 
 
 
@@ -270,6 +269,8 @@
             </div>
         </div>
         </div>
+     
+
     </section>
 
 
@@ -277,25 +278,27 @@
 
     <section class="member-section">
         <div class="container-mem container">
-            <div class="text-section">
-                <h4>BECOME A MEMBER</h4>
-                <h1>Join the movement and become a JCI member</h1>
-                <!-- <button ></button> -->
-                <button class="find-button">
-                    <p>Find Organisation</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M2 2l8 6-8 6" />
-                      </svg>
-                      
-                      
-                    </svg>
-                </button>
-            </div>
-            <div class="image-section">
-                <img src="https://europe.jci.cc/wp-content/uploads/2020/06/Picture3.jpg" alt="Group of people" />
-            </div>
+          <div id="circle"></div>
+      
+          <div class="text-section">
+            <h4>BECOME A MEMBER</h4>
+            <h1>Join the movement and become a JCI member</h1>
+            <button class="find-button">
+              <p>Find Organisation</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M2 2l8 6-8 6" />
+              </svg>
+            </button>
+          </div>
+      
+          <div class="image-section">
+            <img
+              src="https://europe.jci.cc/wp-content/uploads/2020/06/Picture3.jpg"
+              alt="Group of people"
+            />
+          </div>
         </div>
-    </section>
+      </section>
 
 
 
@@ -362,9 +365,52 @@
 
 
 
+</style>
+
+<script>
+    const circle = document.getElementById("circle");
+    const memberSection = document.querySelector(".member-section");
+  
+    window.addEventListener("scroll", () => {
+      // Get the section's top and bottom boundaries
+      const sectionTop = memberSection.offsetTop;
+      const sectionHeight = memberSection.offsetHeight;
+      const sectionBottom = sectionTop + sectionHeight;
+  
+      // Get the current scroll position
+      const scrollY = window.scrollY;
+  
+      // Check if the scroll position is within the section
+      if (scrollY >= sectionTop && scrollY <= sectionBottom) {
+        // Calculate the circle's position relative to the section
+        const offset = scrollY - sectionTop;
+        circle.style.top = `${offset}px`;
+      } else {
+        // Reset the circle's position if out of bounds
+        circle.style.top = "0";
+      }
+    });
+  </script>
 
 
 
+
+<script>
+    const triangle = document.getElementById("triangle");
+const container = document.querySelector(".news-section .container");
+
+window.addEventListener("scroll", () => {
+  const containerTop = container.offsetTop;
+  const containerHeight = container.offsetHeight;
+  const scrollY = window.scrollY;
+
+  if (scrollY >= containerTop && scrollY <= containerTop + containerHeight) {
+    const relativeScroll = scrollY - containerTop;
+    triangle.style.top = `${relativeScroll}px`; // Move triangle within the container
+  }
+});
+
+</script>
   <script src="script.js "></script>
 
 </html>

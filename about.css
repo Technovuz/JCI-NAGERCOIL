@@ -201,6 +201,7 @@ h1, h2, h3, h4, h5, h6 {
     /* padding: 4px 15px; */
     text-align: center;
     padding: 10PX;
+
 }
 
 
@@ -459,3 +460,62 @@ footer {
     }
   }
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Triangle Styling for the Project Section */
+.project #triangle {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid #fcb900; /* Yellow triangle */
+  position: absolute;
+  top: 0px; /* Adjust this to position above the section */
+  left: 77.6%; /* Center horizontally */
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+/* Parent container for relative positioning */
+.project .container {
+  position: relative; 
+  z-index: 2 !important; 
+}
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+
+  .project #triangle {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid #fcb900;
+    ; /* Blue triangle */
+    position: absolute;
+    left: 75.5%; /* Center horizontally */
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+  
+}
+
+

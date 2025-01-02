@@ -66,7 +66,6 @@
     </div>
 </nav>
 
-<br>
 
 
 
@@ -81,55 +80,54 @@
 
 
 
-    <div class="team-section">
-     
-        <div class="team-section-text">
-
-            <p>Meet the HQ Team</p>
-            <h1>JCI Nagercoil Headquarters</h1>
-            <h5>The permanent, full-time staff provides support and other services to JCI members in Nagercoil.</h5>
-
-        </div>
-        
-        <div class="team-container">
-          <div class="team-card">
-            <img src="photos/person.avif" alt="Oana Radu">
-            <h3>Oana Radu</h3>
-            <p>Growth & Development Director for Nagercoil</p>
-            <div class="social">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#">Learn more</a>
-            </div>
-          </div>
-      
-          <div class="team-card">
-            <img src="photos/person.avif" alt="Catalina Brinza">
-            <h3>Catalina Brinza</h3>
-            <p>Growth & Development Manager for Nagercoil</p>
-            <div class="social">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>  
-              <a href="#">Learn more</a>
-            </div>
-          </div>
-        </div>
+<div class="team-section">
+  <div id="triangle"></div> <!-- Add the triangle div here -->
+  
+  <div class="team-section-text">
+    <p>Meet the HQ Team</p>
+    <h1>JCI Nagercoil Headquarters</h1>
+    <h5>The permanent, full-time staff provides support and other services to JCI members in Nagercoil.</h5>
+  </div>
+  
+  <div class="team-container">
+    <div class="team-card">
+      <img src="photos/person.avif" alt="Oana Radu">
+      <h3>Oana Radu</h3>
+      <p>Growth & Development Director for Nagercoil</p>
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#">Learn more</a>
       </div>
-      
+    </div>
+
+    <div class="team-card">
+      <img src="photos/person.avif" alt="Catalina Brinza">
+      <h3>Catalina Brinza</h3>
+      <p>Growth & Development Manager for Nagercoil</p>
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#">Learn more</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
       
 <div class="main-latest">
+  <div class="latest-news-top"></div>
+  
+  <div class="latest-news">
+      <div class="sce-las">
+          <p>Stay up-to-date</p>
+          <h1 class="las-h1">Want to learn what we do? Check our latest news!</h1>
+          <button class="buttonlas">Latest News</button>
+      </div>
+  </div>
+  <div id="triangleZ"></div> <!-- Add the triangle here -->
+</div>
 
-    <div class="latest-news-top"></div>
-    
-    <div class="latest-news">
-        <div class="sce-las">
-    <p>Stay up-to-date</p>
-    <h1 class="las-h1">Want to learn what we do? Check our latest news!</h1>
-    <button class="buttonlas">Latest News</button>
-        </div>
-    
-    </div>
-    </div>
     
     
     
@@ -189,6 +187,53 @@
       <script src="script.js"></script>
 
 </body>
+
+<script>
+  const triangle = document.getElementById("triangle");
+  const teamSection = document.querySelector(".team-section");
+
+  window.addEventListener("scroll", () => {
+    const containerTop = teamSection.offsetTop;
+    const containerHeight = teamSection.offsetHeight;
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+
+    // Only move the triangle if the team section is in the viewport
+    if (scrollY + windowHeight > containerTop && scrollY < containerTop + containerHeight) {
+      const relativeScroll = Math.min(
+        Math.max(scrollY - containerTop, 0),
+        containerHeight - triangle.offsetHeight
+      );
+      triangle.style.top = `${relativeScroll}px`; // Move triangle within the container
+    }
+  });
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
+
+
+<script>
+  const triangleZ = document.getElementById("triangleZ");
+  const latestNewsSection = document.querySelector(".main-latest");
+
+  window.addEventListener("scroll", () => {
+    const sectionTop = latestNewsSection.offsetTop;
+    const sectionHeight = latestNewsSection.offsetHeight;
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+
+    // Only move the triangleZ if the section is in the viewport
+    if (scrollY + windowHeight > sectionTop && scrollY < sectionTop + sectionHeight) {
+      const relativeScroll = Math.min(
+        Math.max(scrollY - sectionTop, 0),
+        sectionHeight - triangleZ.offsetWidth
+      );
+
+      // Move triangleZ horizontally from left to right
+      triangleZ.style.left = `${relativeScroll}px`; // Move triangle along the X-axis
+    }
+  });
+</script>
+
 </html>

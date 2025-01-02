@@ -1035,6 +1035,80 @@ img {
 }
 
 
+.member-section {
+  /* height: 100vh; */
+  position: relative;
+  background: #f8f9fa;
+}
+
+#circle {
+  width: 120px;
+  height: 120px;
+  background-color: #007bff; /* Blue color */
+  border-radius: 50%; /* Make it a circle */
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: translateX(-50%);
+}
+
+.container-mem {
+  position: relative;
+  /* height: 100%;  */
+}
+
+
+
+
+
+/* Triangle Styling */
+#triangle {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid #fcb900;
+  ; /* Blue triangle */
+  position: absolute;
+  left: 100%; /* Center horizontally */
+  transform: translateX(-50%);
+  z-index: 999;
+}
+
+/* Parent container styling for relative positioning */
+.news-section .container {
+  position: relative; /* Parent must be relative */
+  /* height: 500px;  */
+
+ 
+}
+
+
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  /* #triangle {
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid #fcb900;
+  } */
+  #triangle {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid #fcb900;
+    ; /* Blue triangle */
+    position: absolute;
+    left: 100%; /* Center horizontally */
+    transform: translateX(-50%);
+    z-index: 999;
+  }
+  
+}
+
+
+
+
 
 
 
