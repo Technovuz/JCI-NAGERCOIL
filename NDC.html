@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="NDC.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/photos/nav-logo.webp">
+    <link rel="icon" type="image/x-icon" href="/photos/fav (2).png">
 
 </head>
 <body>
@@ -65,46 +65,47 @@
 
 
 
-    <div class="jci-section">
-        <div class="header">
-          <p class="small-title">JCI NLO</p>
-          <h1 class="main-title">JCI Nagercoil Development Council</h1>
-          <p class="description">
-            The JCI Nagercoil Development Council is an elected team within JCI Nagercoil that works towards growth of current Local and 
-            <a href="#">National Organisations</a> and develops new Organisations in countries where JCI is yet not present.
-          </p>
-        </div>
-        <div class="cards">
-          <div class="card">
-            <div class="icon">
+<div class="jci-section">
+  <div class="header">
+      <p class="small-title">JCI NLO</p>
+      <h1 class="main-title">JCI Nagercoil Development Council</h1>
+      <p class="description">
+          The JCI Nagercoil Development Council is an elected team within JCI Nagercoil that works towards growth of current Local and 
+          <a href="#">National Organisations</a> and develops new Organisations in countries where JCI is yet not present.
+      </p>
+  </div>
+  <div class="cards">
+      <div class="card">
+          <div class="icon">
               <i class="fas fa-chart-line"></i>
-            </div>
-            <h3 class="card-title">Develop</h3>
-            <p class="card-description">
+          </div>
+          <h3 class="card-title">Develop</h3>
+          <p class="card-description">
               Develop JCI presences in Nagercoil countries without National Organisation representation.
-            </p>
-          </div>
-          <div class="card">
-            <div class="icon">
-              <i class="fas fa-hands-helping"></i>
-            </div>
-            <h3 class="card-title">Support</h3>
-            <p class="card-description">
-              Support provisional and potential National Organisations in the affiliation process.
-            </p>
-          </div>
-          <div class="card">
-            <div class="icon">
-              <i class="fas fa-people-arrows"></i>
-            </div>
-            <h3 class="card-title">Assist</h3>
-            <p class="card-description">
-              Assist existing National Organisations with growth and development.
-            </p>
-          </div>
-        </div>
+          </p>
       </div>
-      
+      <div class="card">
+          <div class="icon">
+              <i class="fas fa-hands-helping"></i>
+          </div>
+          <h3 class="card-title">Support</h3>
+          <p class="card-description">
+              Support provisional and potential National Organisations in the affiliation process.
+          </p>
+      </div>
+      <div class="card">
+          <div class="icon">
+              <i class="fas fa-people-arrows"></i>
+          </div>
+          <h3 class="card-title">Assist</h3>
+          <p class="card-description">
+              Assist existing National Organisations with growth and development.
+          </p>
+      </div>
+  </div>
+  <div id="jci-triangle"></div>
+</div>
+
       
 
 
@@ -231,8 +232,6 @@
 
 
 
-
-
       <div class="main-tranfer-2">
         <div class="container">
           <div class="row m-0 p-0">
@@ -240,7 +239,6 @@
               <div class="box-tranfer-2 col-lg-6 col-md-6 col-sm-12 col-12">
                 <img src="photos/ndc.jpeg" alt="JCI Image">
               </div>
-      
               <div class="box-tranfer-2 col-lg-6 col-md-6 col-sm-12 col-12">
                 <div class="text-container">
                   <h6>How can you benefit?</h6>
@@ -256,8 +254,10 @@
               </div>
             </div>
           </div>
+          <div id="tranfer-triangle"></div>
         </div>
       </div>
+      
 
 
 
@@ -288,19 +288,18 @@
 
 
       <div class="main-latest">
-
         <div class="latest-news-top"></div>
         
         <div class="latest-news">
             <div class="sce-las">
-        <p>Stay up-to-date</p>
-        <h1 class="las-h1">Want to learn what we do? Check our latest news!</h1>
-        <button class="buttonlas">Latest News</button>
+                <p>Stay up-to-date</p>
+                <h1 class="las-h1">Want to learn what we do? Check our latest news!</h1>
+                <button class="buttonlas">Latest News</button>
             </div>
-        
         </div>
-        </div>
-        
+        <div id="triangleZ"></div> <!-- Add the triangle here -->
+      </div>
+      
         
         
         <footer>
@@ -380,6 +379,28 @@
 
 
 </body>
+<script>
+  const triangleZ = document.getElementById("triangleZ");
+  const latestNewsSection = document.querySelector(".main-latest");
+
+  window.addEventListener("scroll", () => {
+    const sectionTop = latestNewsSection.offsetTop;
+    const sectionHeight = latestNewsSection.offsetHeight;
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+
+    // Only move the triangleZ if the section is in the viewport
+    if (scrollY + windowHeight > sectionTop && scrollY < sectionTop + sectionHeight) {
+      const relativeScroll = Math.min(
+        Math.max(scrollY - sectionTop, 0),
+        sectionHeight - triangleZ.offsetWidth
+      );
+
+      // Move triangleZ horizontally from left to right
+      triangleZ.style.left = `${relativeScroll}px`; // Move triangle along the X-axis
+    }
+  });
+</script>
 
 <script>
     // script.js
@@ -400,6 +421,57 @@
     });
   
   </script>
+  <script>
+    const jciTriangle = document.getElementById("jci-triangle");
+const jciSection = document.querySelector(".jci-section");
+
+window.addEventListener("scroll", () => {
+    const sectionTop = jciSection.offsetTop;
+    const sectionHeight = jciSection.offsetHeight;
+    const scrollY = window.scrollY;
+
+    if (scrollY >= sectionTop && scrollY <= sectionTop + sectionHeight) {
+        const relativeScroll = Math.min(
+            scrollY - sectionTop,
+            sectionHeight - jciTriangle.offsetHeight
+        );
+        jciTriangle.style.top = `${relativeScroll}px`; // Adjust the triangle's position
+    } else if (scrollY < sectionTop) {
+        jciTriangle.style.top = `0px`; // Reset to top
+    } else if (scrollY > sectionTop + sectionHeight) {
+        jciTriangle.style.top = `${sectionHeight - jciTriangle.offsetHeight}px`; // Reset to bottom
+    }
+});
+
+  </script>
+
+
+<script>
+  const tranferTriangle = document.getElementById("tranfer-triangle");
+const mainTranferSection = document.querySelector(".main-tranfer-2");
+
+window.addEventListener("scroll", () => {
+  const sectionTop = mainTranferSection.offsetTop;
+  const sectionHeight = mainTranferSection.offsetHeight;
+  const scrollY = window.scrollY;
+
+  if (scrollY >= sectionTop && scrollY <= sectionTop + sectionHeight) {
+    const relativeScroll = Math.min(
+      scrollY - sectionTop,
+      sectionHeight - tranferTriangle.offsetHeight
+    );
+    tranferTriangle.style.top = `${relativeScroll}px`; // Adjust the triangle's position
+  } else if (scrollY < sectionTop) {
+    tranferTriangle.style.top = `0px`; // Reset to top
+  } else if (scrollY > sectionTop + sectionHeight) {
+    tranferTriangle.style.top = `${sectionHeight - tranferTriangle.offsetHeight}px`; // Reset to bottom
+  }
+});
+
+
+</script>
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
 </html>

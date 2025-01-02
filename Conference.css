@@ -4,7 +4,9 @@
   box-sizing: border-box;
 }
 
-
+body,html{
+  overflow-x: hidden;
+}
 
 .navbar {
 background-color: #ffffff;
@@ -598,10 +600,81 @@ color: white;
 
 
 
+.conference {
+  position: relative;
+  z-index: 2;
+
+}
+
+#triangle {
+  position: absolute;
+  top: 0;
+  left: 74%; /* Center horizontally */
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 100px solid #fcb900; /* Triangle color */
+  z-index: -1;
+}
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  .conference {
+    position: relative;
+    z-index: 2;
+  
+  }
+  
+  #triangle {
+    position: absolute;
+    top: 0;
+    left: 74%; /* Center horizontally */
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 40px solid #fcb900; /* Triangle color */
+    z-index: -1;
+  }
 
 
+}
+
+#triangleZ {
+  width: 0;
+  height: 0;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  border-bottom: 120px solid #fcb900; /* Yellow triangle */
+  position: absolute;
+  top: 80%; /* Position it vertically in the middle */
+  left: 0; /* Start at the left */
+  transform: translateY(-50%); /* Center the triangle vertically */
+}
+
+.main-latest {
+  position: relative; /* To position the triangle absolutely inside */
+ 
+}
+@media screen and (min-width: 0px) and (max-width: 480px) {
 
 
+#triangleZ {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid #fcb900; /* Yellow triangle */
+  position: absolute;
+  top: 80%; /* Position it vertically in the middle */
+  left: 0; /* Start at the left */
+  transform: translateY(-50%); /* Center the triangle vertically */
+}
+
+
+}
 
 
 

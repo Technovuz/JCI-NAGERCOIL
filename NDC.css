@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body,html{
+  overflow-x: hidden;
+}
 
 
 .navbar {
@@ -328,12 +330,38 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
+.main-tranfer-2 {
+  position: relative; /* Ensure the triangle stays within this div */
+ 
+}
+
+#tranfer-triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid #fcb900; /* Triangle color */
+  top: 0; /* Initial position */
+  left: 92.7%; /* Center horizontally */
+  transform: translateX(-50%);
+  z-index: 1000;
+}
 
 
+@media screen and (min-width: 0px) and (max-width: 480px) {
 
 
+  .main-tranfer-2 {
+    position: relative; /* Ensure the triangle stays within this div */
+   
+  }
+  
+  #tranfer-triangle {
+  display: none;
+  }
 
-
+}
 
 
 
@@ -1059,29 +1087,22 @@ h1, h2, h3, h4, h5, h6 {
   } */
   .buttonlas{
     
-        /* font-size: 15px; */
-        background-color: #3a67b1 !important;
-        border-width: 8px !important;
-        border-color: #3a67b1 !important;
-      
-        letter-spacing: 1px;
-        color: white;
-        
-        transition: all 300ms ease 0ms;
-        font-size: 20px;
-        font-weight: 500;
-        padding: .3em 1em;
-        line-height: 1.7em !important;
-        background-size: cover;
-        background-position: 50%;
-        background-repeat: no-repeat;
-        border: 2px solid;
-        border-radius: 3px; 
-        -webkit-transition-duration: .2s;
-        transition-duration: .2s;
-        -webkit-transition-property: all !important;
-        transition-property: all !important;
-    }
+    /* font-size: 15px; */
+    background-color: #3a67b1 !important;
+    /* border-width: 8px !important; */
+    /* border-color: #3a67b1 !important; */
+  
+    letter-spacing: 1px;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    padding: .3em 1em;
+    line-height: 1.7em !important;
+    background-size: cover;
+    background-position: 50%;
+  
+} 
   .buttonlas:hover{
     background-color: #fcb900 !important;
     border: #fcb900 !important;
@@ -1106,13 +1127,83 @@ h1, h2, h3, h4, h5, h6 {
   
   
   
+
+  #triangleZ {
+    width: 0;
+    height: 0;
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    border-bottom: 120px solid #fcb900; /* Yellow triangle */
+    position: absolute;
+    top: 80%; /* Position it vertically in the middle */
+    left: 0; /* Start at the left */
+    transform: translateY(-50%); /* Center the triangle vertically */
+}
+
+.main-latest {
+    position: relative; /* To position the triangle absolutely inside */
+   
+}
+@media screen and (min-width: 0px) and (max-width: 480px) {
+
+
+
+  #triangleZ {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid #fcb900; /* Yellow triangle */
+    position: absolute;
+    top: 80%; /* Position it vertically in the middle */
+    left: 0; /* Start at the left */
+    transform: translateY(-50%); /* Center the triangle vertically */
+}
+
+  
+}
   
   
+.jci-section {
+  position: relative; /* Make sure the triangle stays within this section */
+  z-index: 2;
+ 
+}
+
+#jci-triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid #fcb900; /* Triangle color */
+  top: 0; /* Initial position */
+  left: 81%; /* Center horizontally */
+  transform: translateX(-50%);
+ z-index: -1;
+}
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
   
+  .jci-section {
+    position: relative; /* Make sure the triangle stays within this section */
+    z-index: 2;
+   
+  }
   
-  
-  
-  
+  #jci-triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 29px solid transparent;
+    border-right: 29px solid transparent;
+    border-bottom: 60px solid #fcb900; /* Triangle color */
+    top: 0; /* Initial position */
+    left: 91%; /* Center horizontally */
+    transform: translateX(-50%);
+   z-index: -1;
+  }
+}
   
   
   /* Footer Styles */
