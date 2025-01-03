@@ -162,44 +162,43 @@
   }
   
   
-
-
-
-
-
-
-
-
-
-
-
-
-/* General container styling */
-
-
-.row {
+#businessDetailsContainer{
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    padding: 50px;
+    gap: 50px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between; /* Ensures cards have spacing between them */
     gap: 25px;
+    margin-bottom: 30px;
 }
 
-/* Business card styling */
+  
+
+
+
+
+/* Business card container styling */
 .business-card {
-display: flex;
-flex-direction: column;
-background: linear-gradient(145deg, #ffffff, #e9ecef);
-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.08);
-/* border-radius: 12px; */
-overflow: hidden;
-flex: 1 1 calc(45% - 20px);
-max-width: 45%;
-transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(145deg, #ffffff, #f1f3f5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    flex: 1 1 calc(50% - 20px); /* Two cards per row on larger screens */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
 }
 
+/* Hover effect on business card */
 .business-card:hover {
-transform: translateY(-8px) scale(1.03);
-box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* Photo section styling */
@@ -207,276 +206,322 @@ box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
+    padding: 25px;
     background: linear-gradient(135deg, #6a8fde, #4a6fb2);
-    /* border-radius: 15px; */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
 }
 
 .photo-section img {
     width: 230px;
-    height: 257px;
+    height: 230px;
     object-fit: cover;
     border-radius: 50%;
     border: 6px solid #ffffff;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s ease-in-out;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease;
 }
 
 .photo-section img:hover {
-    transform: scale(1.2) rotate(0deg);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.15) rotate(0deg);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
     border-color: #6a8fde;
 }
 
 /* Details section styling */
 .details-section {
-padding: 25px;
-/* text-align: center; */
-/* background: #ffffff; */
+    padding: 30px 25px;
 }
 
 .details-section h2 {
-font-size: 1.8rem;
-color: #333333;
-margin-bottom: 15px;
-font-weight: 700;
-letter-spacing: 1px;
-text-transform: capitalize;
+    font-size: 1.9rem;
+    color: #333333;
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: capitalize;
 }
 
 .details-section p {
-font-size: 1rem;
-margin-bottom: 12px;
-color: #555555;
-line-height: 1.7;
-letter-spacing: 0.5px;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: #555555;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
 }
 
 .details-section a {
-display: inline-block;
-text-decoration: none;
-color: #0056b3;
-font-weight: 600;
-margin-top: 15px;
-border: 2px solid #0056b3;
-border-radius: 8px;
-padding: 10px 18px;
-transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    color: #0056b3;
+    font-weight: 600;
+    margin-top: 15px;
+    border: 2px solid #0056b3;
+    border-radius: 8px;
+    padding: 12px 18px;
+    transition: all 0.3s ease;
 }
 
 .details-section a:hover {
-background-color: #0056b3;
-color: #ffffff;
-box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3);
+    background-color: #0056b3;
+    color: #ffffff;
+    box-shadow: 0 6px 15px rgba(0, 86, 179, 0.3);
 }
 
-/* Business photo styling */
-/* Business photo container */
-.business-photo {
-    width: 400px; /* Set width to 400px */
-    height: 400px; /* Set height to 300px (adjustable based on your preference) */
-    margin-top: 15px;
-    border-radius: 12px;
-    overflow: hidden;
-    /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); */
-    position: relative; /* To allow the hover effect to work smoothly */
-}
-
-/* Image inside the container */
-.business-photo img {
-    width: 100%;
-    height: 100%; /* Ensure the image covers the entire div height */
-    object-fit: cover; /* Make sure the image covers the div without distortion */
-    border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effect on the image */
-.business-photo img:hover {
-    transform: scale(1.07); /* Slight zoom-in effect */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
-}
-
-
-/* Responsive Design */
+/* Responsiveness */
 
 /* Medium Devices (tablets) */
 @media (max-width: 768px) {
-.business-card {
-    max-width: 100%;
-    flex: 1 1 100%;
-}
+    .business-card {
+        max-width: 100%;
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
 
-.photo-section {
-    padding: 15px;
-}
+    .photo-section {
+        padding: 20px;
+    }
 
-.details-section {
-    padding: 20px;
-}
+    .details-section {
+        padding: 20px;
+    }
 
-.details-section h2 {
-    font-size: 1.5rem;
-}
+    .details-section h2 {
+        font-size: 1.6rem;
+    }
 
-.details-section p {
-    font-size: 0.95rem;
-}
+    .details-section p {
+        font-size: 0.95rem;
+    }
 }
 
 /* Small Devices (mobile) */
 @media (max-width: 600px) {
-.business-card {
-    flex: 1 1 100%;
-}
+    .business-card {
+        flex: 1 1 100%;
+    }
 
-.photo-section img {
-    width: 120px;
-    height: 120px;
-}
+    .photo-section img {
+        width: 160px;
+        height: 160px;
+    }
 
-.details-section h2 {
-    font-size: 1.3rem;
-}
+    .details-section h2 {
+        font-size: 1.4rem;
+    }
 
-.details-section p {
-    font-size: 0.9rem;
-}
+    .details-section p {
+        font-size: 1rem;
+    }
 
-.details-section a {
-    padding: 8px 12px;
-    font-size: 0.9rem;
-}
+    .details-section a {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
 }
 
 /* Very Small Devices (Mobile Portrait) */
 @media (max-width: 480px) {
-.photo-section img {
-    width: 124px;
-        height: 124px;
+    .photo-section img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .details-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .details-section p {
+        font-size: 0.95rem;
+    }
+
+    .details-section a {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+
+    .business-card {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .business-photo {
+        height: 180px;
+        width: 285px;
+        margin-top: 81px;
+        border-radius: 12px;
+        position: relative;
+        right: 8px;
+    }
+    #businessDetailsContainer{
+        width: 100%;
+        /* background-color: red; */
+        display: flex;
+        padding: 0px;
+        gap: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; /* Ensures cards have spacing between them */
+        gap: 25px;
+        margin-bottom: 30px;
+    }
+    
+      
 }
 
-.details-section h2 {
-    font-size: 1.2rem;
-}
-
-.details-section p {
-    font-size: 0.85rem;
-}
-
-.details-section a {
-    padding: 6px 10px;
-    font-size: 0.85rem;
-}
-
-.business-photo {
-    height: 180px;
-}
-.business-photo {
-    width: 285px;
-    height: 300px;
-    margin-top: 81px;
-    border-radius: 12px;
-    overflow: hidden;
-    /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); */
-    position: relative;
-    right: 8px;
-}
-.extra {
-    height: 477px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    display: contents;
-    /* background-color: #0056b3; */
-}
-}
-
-/* Extra Styling for Bold and Accent Text */
+/* Add some extra styling for bold and accent text */
 .bold {
-font-weight: bolder;
-color: #333333;
+    font-weight: bolder;
+    color: #333333;
 }
 
 .accent {
-color: #0056b3;
-font-weight: bold;
+    color: #0056b3;
+    font-weight: bold;
 }
 
+/* Business Card Styling */
 
 
-.business-card {
-border: 1px solid #ddd;
-border-radius: 10px;
-overflow: hidden;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-width: calc(33.33% - 20px);
-background-color: #fff;
-display: flex;
-flex-direction: column;
+/* Hover Effect for Business Card */
+.business-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* .photo-section img {
-width: 100%;
-height: auto;
-object-fit: cover;
-} */
-
-.details-section {
-padding: 15px;
+/* Header (Name of Person) */
+.business-card h2 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+    text-transform: capitalize;
 }
 
-.details-section h2 {
-font-size: 1.5rem;
-margin: 0 0 10px;
+/* Text styling inside the Business Card */
+.business-card p {
+    font-size: 16px;
+    color: #555;
+    margin: 8px 0;
+    line-height: 1.6;
 }
 
-.details-section p {
-margin: 5px 0;
+/* Anchor Link (Website link) */
+.business-card a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
-.details-section .bold {
-font-weight: bold;
+.business-card a:hover {
+    color: #0056b3;
 }
 
-.business-photo img {
-width: 100%;
-height: auto;
-margin-top: 10px;
-}
-
-.details-section a {
-display: inline-block;
-margin-top: 10px;
-text-decoration: none;
-color: #007BFF;
-font-weight: bold;
-}
-
-.details-section a:hover {
-text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-.business-card {
-    width: calc(50% - 20px);
-}
-}
-
-@media (max-width: 480px) {
-.business-card {
-    width: 100%;
-}
-} 
-
-.extra{
-    height: 400px;
+/* Flexbox for Image Section */
+.business-card .photo-section {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    /* background-color: #0056b3; */
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: center; /* Vertically center the images */
 }
+
+/* Person Image Styling */
+.person-photo {
+    max-width: 190px;
+    max-height: 217px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 4px solid #f0f0f0;
+    transition: transform 0.3s ease;
+}
+
+.person-photo:hover {
+    transform: scale(1.1);
+}
+
+/* Business Image Styling */
+.business-image {
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: #f9f9f9; /* Light background to highlight the image */
+    border-radius: 15px; /* Rounded corners for the container */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow effect */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.business-image:hover {
+    transform: scale(1.03); /* Slight zoom effect on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.business-image img {
+    width: 100%; /* Full width of the container */
+    height: 350px; /* Maintain aspect ratio */
+    border-radius: 12px;
+    object-fit: cover; /* Ensure the image covers the container */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.business-image:hover img {
+    transform: scale(1.02); /* Slight zoom for the image itself */
+}
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .business-card .photo-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .person-photo {
+        margin-bottom: 15px;
+    }
+
+    .business-card h2 {
+        font-size: 24px;
+    }
+
+    .business-image img {
+        max-height: 250px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -567,6 +612,8 @@ text-decoration: underline;
         max-width: 100%; /* Full width for the dropdown */
     }
 }
+
+
 
 
 
