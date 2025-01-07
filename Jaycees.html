@@ -90,84 +90,118 @@
 
 
 
-
-
     <div id="businessDetailsContainer"></div>
 
-<!-- <div id="popupOverlay" class="popup-overlay">
-    <div id="popupContent" class="popup-content">
-        <span class="close-btn" onclick="closePopup()">×</span>
-        <div id="popupImages">
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="lightbox-modal" style="display: none;">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" />
+        <div id="caption"></div>
+        <div class="lightbox-navigation">
+            <button id="prevBtn" onclick="showPrevImage()">&#10094;</button>
+            <button id="nextBtn" onclick="showNextImage()">&#10095;</button>
         </div>
     </div>
-</div> -->
-
-
-
-</body>
-<script>
-    // Fetch and display data from localStorage
-    const displayData = (filteredData = null) => {
-        const data = JSON.parse(localStorage.getItem("businessData")) || [];
-        const container = document.getElementById("businessDetailsContainer");
-
-        const displayList = filteredData || data;
-
-        if (displayList.length === 0) {
-            container.innerHTML = "<p>No business details found.</p>";
-            return;
-        }
-
-        container.innerHTML = ""; // Clear existing content
-        displayList.forEach((item) => {
-            container.innerHTML += `
-            <div class="business-card">
-                <!-- Person Image Section -->
-                <div class="photo-section">
-                    <img src="${item.personPhoto}" alt="Person Photo" class="person-photo">
-                </div>
-                
-                <h2>${item.name}</h2>
-                <p><strong>Business Name:</strong> ${item.businessName}</p>
-                <p><strong>Category:</strong> ${item.category}</p>
-                <p><strong>Details:</strong> ${item.details}</p>
-                <p><strong>Phone:</strong> ${item.phone}</p>
-                <p><strong>Email:</strong> ${item.email}</p>
-                <p><strong>Address:</strong> ${item.address}</p>
-                <a href="${item.website}" target="_blank">Visit Website</a>
-
-                <!-- Display Business Image below the details -->
-                <div class="business-image">
-                    <img src="${item.businessPhoto}" alt="Business Image">
-                </div>
-            </div>`;
-        });
-    };
-
-    // Filter function for category and search input
-    const filterCards = () => {
-        const data = JSON.parse(localStorage.getItem("businessData")) || [];
-        const categoryFilter = document.getElementById("categoryFilter").value.toLowerCase();
-        const searchInput = document.getElementById("searchInput").value.toLowerCase();
-
-        const filteredData = data.filter((item) => {
-            const matchesCategory = categoryFilter ? item.category.toLowerCase() === categoryFilter : true;
-            const matchesSearch = searchInput
-                ? item.name.toLowerCase().includes(searchInput) || item.businessName.toLowerCase().includes(searchInput)
-                : true;
-            return matchesCategory && matchesSearch;
-        });
-
-        displayData(filteredData);
-    };
-
-    // Hover effect for category dropdown (optional)
-    const hoverCategory = () => {
-        console.log("Hovered over category dropdown");
-    };
-
-    displayData(); // Call on page load
-</script>
+    
+    <script>
+        let currentImageIndex = 0;
+        let lightboxImages = [];
+    
+        // Function to display the lightbox modal
+        const openLightbox = (images, index) => {
+            lightboxImages = images;
+            currentImageIndex = index;
+    
+            const lightboxModal = document.getElementById("lightboxModal");
+            const lightboxImg = document.getElementById("lightboxImg");
+            const caption = document.getElementById("caption");
+    
+            lightboxImg.src = lightboxImages[currentImageIndex];
+            caption.innerHTML = `Image ${currentImageIndex + 1} of ${lightboxImages.length}`;
+            lightboxModal.style.display = "block";
+        };
+    
+        // Close the lightbox
+        const closeLightbox = () => {
+            document.getElementById("lightboxModal").style.display = "none";
+        };
+    
+        // Show previous image
+        const showPrevImage = () => {
+            if (currentImageIndex > 0) {
+                currentImageIndex--;
+                openLightbox(lightboxImages, currentImageIndex);
+            }
+        };
+    
+        // Show next image
+        const showNextImage = () => {
+            if (currentImageIndex < lightboxImages.length - 1) {
+                currentImageIndex++;
+                openLightbox(lightboxImages, currentImageIndex);
+            }
+        };
+    
+        // Fetch and display data from localStorage
+        const displayData = (filteredData = null) => {
+            const data = JSON.parse(localStorage.getItem("businessData")) || [];
+            const container = document.getElementById("businessDetailsContainer");
+    
+            const displayList = filteredData || data;
+    
+            if (displayList.length === 0) {
+                container.innerHTML = "<p>No business details found.</p>";
+                return;
+            }
+    
+            container.innerHTML = ""; // Clear existing content
+            displayList.forEach((item, index) => {
+                container.innerHTML += `
+                <div class="business-card">
+                    <!-- Person Image Section -->
+                    <div class="photo-section">
+                        <img src="${item.personPhoto}" alt="Person Photo" class="person-photo">
+                    </div>
+                    
+                    <h2>${item.name}</h2>
+                    <p><strong>Business Name:</strong> ${item.businessName}</p>
+                    <p><strong>Category:</strong> ${item.category}</p>
+                    <p><strong>Details:</strong> ${item.details}</p>
+                    <p><strong>Phone:</strong> ${item.phone}</p>
+                    <p><strong>Email:</strong> ${item.email}</p>
+                    <p><strong>Address:</strong> ${item.address}</p>
+                    <a href="${item.website}" target="_blank">Visit Website</a>
+    
+                    <!-- Display Business Image below the details -->
+                    <div class="business-image" onclick="openLightbox(['${item.businessPhoto}', '${item.extraPhoto1}', '${item.extraPhoto2}'], 0)">
+                        <img src="${item.businessPhoto}" alt="Business Image">
+                    </div>
+                </div>`;
+            });
+        };
+    
+        // Filter function for category and search input
+        const filterCards = () => {
+            const data = JSON.parse(localStorage.getItem("businessData")) || [];
+            const categoryFilter = document.getElementById("categoryFilter").value.toLowerCase();
+            const searchInput = document.getElementById("searchInput").value.toLowerCase();
+    
+            const filteredData = data.filter((item) => {
+                const matchesCategory = categoryFilter ? item.category.toLowerCase() === categoryFilter : true;
+                const matchesSearch = searchInput
+                    ? item.name.toLowerCase().includes(searchInput) || item.businessName.toLowerCase().includes(searchInput)
+                    : true;
+                return matchesCategory && matchesSearch;
+            });
+    
+            displayData(filteredData);
+        };
+    
+        displayData(); // Call on page load
+    </script>
+    
+   
+    
 
 
 

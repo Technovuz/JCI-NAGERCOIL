@@ -12,7 +12,13 @@
             background-color: #f9fafb;
             color: #333;
         }
-    
+    .delete{
+        background-color: red;
+    }
+    .delete:hover{
+        background-color: lightgoldenrodyellow;
+        color: red;
+    }
         h1 {
             text-align: center;
             margin-bottom: 30px;
@@ -179,6 +185,9 @@
 
 
 
+
+
+
 <script>
     const businessTableBody = document.getElementById("businessTableBody");
     const editModal = document.getElementById("editModal");
@@ -204,9 +213,11 @@
                     <td><a href="${business.website}" target="_blank">${business.website}</a></td>
                     <td><img src="${business.personPhoto}" alt="Person" width="50"></td>
                     <td><img src="${business.businessPhoto}" alt="Business" width="50"></td>
+                                       
+
                     <td>
                         <button onclick="editBusiness(${index})">Edit</button>
-                        <button onclick="deleteBusiness(${index})">Delete</button>
+                        <button class="delete" onclick="deleteBusiness(${index})">Delete</button>
                     </td>
                 </tr>
             `;
@@ -358,6 +369,12 @@ saveEditButton.addEventListener("click", () => {
 
     // Display data on page load
     window.onload = displayData;
+
+
+
+
+
+    
 </script>
 
 </body>

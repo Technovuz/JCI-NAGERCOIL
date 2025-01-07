@@ -690,13 +690,71 @@
 
 
 
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    color: red;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Lightbox Modal Styling */
+  .lightbox-modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
 }
 
+.lightbox-modal .close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.lightbox-navigation {
+    margin-top: 10px;
+}
+
+.lightbox-navigation button {
+    background-color: white;
+    border: none;
+    font-size: 20px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+#caption {
+    color: white;
+    margin-top: 10px;
+}
