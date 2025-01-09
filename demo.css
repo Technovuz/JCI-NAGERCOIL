@@ -1,0 +1,175 @@
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+#tilesContainer .tile {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#tilesContainer .tile:hover {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+#tilesContainer .tile h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#tilesContainer .tile p {
+    font-size: 16px;
+}
+
+.tile.bg-primary {
+    background-color: #3498db;
+}
+
+.tile.bg-success {
+    background-color: #28a745;
+}
+
+.tile.bg-warning {
+    background-color: #f39c12;
+}
+
+.tile.bg-info {
+    background-color: #17a2b8;
+}
+
+.tile.bg-danger {
+    background-color: #dc3545;
+}
+
+
+h1 {
+    text-align: center;
+    color: #34495e;
+    margin-bottom: 30px;
+}
+
+button#addBusiness {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+table {
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+table thead {
+    background-color: #3498db;
+    color: #fff;
+}
+
+table tbody tr:hover {
+    background-color: #f2f6fa;
+}
+
+table img {
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.btn-action {
+display: flex; /* Align buttons horizontally */
+gap: 10px; /* Add spacing between buttons */
+justify-content: center; /* Center buttons within the table cell */
+align-items: center; /* Align buttons vertically */
+padding: 10px; /* Add padding around buttons */
+}
+
+.btn-action button {
+background-color: #007bff; /* Blue for edit */
+color: white; /* Text color */
+border: none; /* Remove border */
+padding: 15px 15px; /* Add padding */
+border-radius: 10px; /* Rounded corners */
+cursor: pointer; /* Pointer cursor on hover */
+font-size: 16px; /* Button text size */
+transition: all 0.3s ease; /* Smooth transition */
+display: flex; /* Align icon and text */
+align-items: center;
+justify-content: center;
+}
+
+.btn-action button.delete {
+background-color: #dc3545; /* Red for delete */
+}
+
+.btn-action button i {
+margin-right: 5px; /* Add spacing between icon and text */
+font-size: 20px; /* Icon size */
+}
+
+td {
+padding: 0; /* Remove padding for table cells */
+vertical-align: middle; /* Center cell content vertically */
+}
+
+table {
+border-spacing: 0; /* Remove extra spacing between table cells */
+width: 100%; /* Stretch table to full width */
+}
+
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.modal h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #3498db;
+}
+
+.modal input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+}
+.button i{
+    margin: 8px;
+}
