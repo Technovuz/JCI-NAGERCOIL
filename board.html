@@ -80,7 +80,7 @@
 
 
     
-    <div id="team-container">
+    <div id="team-container" >
        
       </div>
       
@@ -183,10 +183,8 @@ document.addEventListener("DOMContentLoaded", loadUserPageData);
 
 </script> -->
 
-
-
-
-<!-- <script>
+<!-- 
+ <script> 
     const teamContainer = document.getElementById('team-container');
 
     function loadTeamData() {
@@ -208,9 +206,49 @@ document.addEventListener("DOMContentLoaded", loadUserPageData);
     }
 
     loadTeamData();
-</script> -->
+</script>  -->
 
 
+<script>
+    const teamContainer = document.getElementById('team-container');
+
+    function loadTeamData() {
+        const teamData = [
+            { name: "John Doe", role: "Developer", photo: "https://via.placeholder.com/150" },
+            { name: "Jane Smith", role: "Designer", photo: "https://via.placeholder.com/150" },
+            { name: "Sam Wilson", role: "Project Manager", photo: "https://via.placeholder.com/150" }
+        ];
+
+        // Save team data in localStorage for demonstration
+        localStorage.setItem("teamData", JSON.stringify(teamData));
+
+        // Load and display team data
+        const storedData = JSON.parse(localStorage.getItem("teamData")) || [];
+        teamContainer.innerHTML = '';
+
+        storedData.forEach(member => {
+            const card = document.createElement('div');
+            card.className = 'team-card';
+            card.innerHTML = `
+                <img src="${member.photo}" alt="${member.name}" class="team-photo">
+                <div class="team-info">
+                    <h3>${member.name}</h3>
+                    <p>${member.role}</p>
+                </div>
+            `;
+
+            // Navigate to details page on click
+            card.addEventListener('click', () => {
+                localStorage.setItem('selectedMember', JSON.stringify(member));
+                window.location.href = 'person-details.html';
+            });
+
+            teamContainer.appendChild(card);
+        });
+    }
+
+    loadTeamData();
+</script>
 <script src="script.js"></script>
 </html>
 

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .person-card {
+            max-width: 400px;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .person-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .person-info {
+            margin-top: 10px;
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+        }
+
+        .lightbox .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .business-photo {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 30px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .minimized-photos {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .minimized-photos img {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            cursor: pointer;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .minimized-photos img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="person-details"></div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">×</span>
+        <img id="lightboxImage" src="" alt="Lightbox Image">
+    </div>
+
+    <script>
+        const personDetails = document.getElementById('person-details');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+
+        // Fetch selectedMember details from localStorage
+        const selectedMember = JSON.parse(localStorage.getItem('selectedMember'));
+
+        if (selectedMember) {
+            personDetails.innerHTML = `
+                <div class="person-card">
+                    <img 
+                        src="${selectedMember.photo}" 
+                        alt="${selectedMember.name}" 
+                        class="person-photo" 
+                        onclick="openLightbox('${selectedMember.photo}')"
+                    >
+                    <div class="person-info">
+                        <h2>${selectedMember.name}</h2>
+                        <p>Role: ${selectedMember.role}</p>
+                                   
+
+                        
+                    </div>
+
+                    <!-- Business Photo -->
+                    <img src="business-photo.jpg" alt="Business Photo" class="business-photo">
+
+                    <!-- Minimized Photos -->
+                    <div class="minimized-photos">
+                        <img src="photo1.jpg" alt="Photo 1">
+                        <img src="photo2.jpg" alt="Photo 2">
+                        <img src="photo3.jpg" alt="Photo 3">
+                        <img src="photo4.jpg" alt="Photo 4">
+                    </div>
+                </div>
+            `;
+        } else {
+            personDetails.innerHTML = '<p>No details available. Please select a team member first.</p>';
+        }
+
+        // Open the lightbox with the selected image
+        function openLightbox(imageSrc) {
+            lightbox.style.display = 'flex';
+            lightboxImage.src = imageSrc;
+        }
+
+        // Close the lightbox
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
