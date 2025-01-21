@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-image: linear-gradient(90deg, #ffffff 22%, #3a67b1 82%) !important;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          margin: 0;
+        }
+        
+        .form_main {
+          width: 300px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(135deg, #ffffff, #f8f9fa);
+          padding: 40px 30px;
+          box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+          border-radius: 15px;
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .form_main::before {
+          position: absolute;
+          content: "";
+          width: 400px;
+          height: 400px;
+          background: radial-gradient(circle, rgba(108, 93, 244, 0.353), transparent);
+          transform: rotate(45deg);
+          left: -200px;
+          bottom: 50px;
+          z-index: 1;
+        }
+        
+        .heading {
+          font-size: 1.8em;
+          color: #4a4a4a;
+          font-weight: bold;
+          margin-bottom: 20px;
+          z-index: 2;
+          text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .inputContainer {
+          width: 100%;
+          position: relative;
+          margin-bottom: 20px;
+          z-index: 2;
+        }
+        
+        .inputIcon {
+          position: absolute;
+          left: 10px;
+          bottom: 15px;
+        }
+        
+        .inputField {
+          width: 84%;
+          height: 40px;
+          background-color: #f8f9fa;
+          border: 2px solid #ddd;
+          border-radius: 8px;
+          padding-left: 40px;
+          font-size: 1em;
+          font-weight: 500;
+          transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .inputField:focus {
+          outline: none;
+          border-color: #3a67b1;
+          box-shadow: 0px 0px 8px rgba(89, 92, 182, 0.4);
+        }
+        
+        .inputField::placeholder {
+          color: #aaa;
+        }
+        
+        #button {
+          width: 100%;
+          height: 40px;
+          border: none;
+          background-color: #3a67b1;
+          color: white;
+          font-size: 1em;
+          font-weight: bold;
+          letter-spacing: 1px;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        
+        #button:hover {
+          background-color: #5985cc;
+          transform: translateY(-2px);
+          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .forgotLink {
+          font-size: 0.9em;
+          font-weight: 500;
+          color: #3a67b1;
+          text-decoration: none;
+          z-index: 2;
+          margin-top: 10px;
+          transition: color 0.3s ease;
+        }
+        
+        .forgotLink:hover {
+          color: #124ba7;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="javascript:void(0);" class="form_main">
+        <p class="heading">
+            <a style="text-decoration: none; color: #3a67b1;" href="index.html">Home</a> | Login
+        </p>
+        <div class="inputContainer">
+            <svg class="inputIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2e2e2e" viewBox="0 0 16 16">
+                <path d="M2.5 3.5A2.5 2.5 0 0 1 5 1h6a2.5 2.5 0 0 1 2.5 2.5v9A2.5 2.5 0 0 1 11 15H5a2.5 2.5 0 0 1-2.5-2.5v-9zM5 2a1.5 1.5 0 0 0-1.5 1.5v.638l4.5 2.25 4.5-2.25V3.5A1.5 1.5 0 0 0 11 2H5z"/>
+            </svg>
+            <input type="email" class="inputField" id="email" placeholder="Email">
+        </div>
+        <div class="inputContainer">
+            <svg class="inputIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2e2e2e" viewBox="0 0 16 16">
+                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
+            </svg>
+            <input type="password" class="inputField" id="password" placeholder="Password">
+        </div>
+        <button id="button">Submit</button>
+        <a class="forgotLink" href="#">Forgot your password?</a>
+        <p class="error" id="errorMessage"></p>
+    </form>
+
+
+
+  
+</body>
+<script>
+  const button = document.getElementById('button');
+  const errorMessage = document.getElementById('errorMessage');
+  const correctPassword = '123456';
+  const correctEmail = 'example@example.com';
+
+  button.addEventListener('click', () => {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      if (email === correctEmail && password === correctPassword) {
+          window.location.href = 'admin.html'; // Replace with your desired URL
+      } else {
+          errorMessage.textContent = 'Invalid email or password. Please try again.';
+      }
+  });
+</script>
+</html>
