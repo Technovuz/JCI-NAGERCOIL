@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+    
+        .container {
+            margin-top: 50px;
+            max-width: 1200px;
+            padding: 0 15px;
+        }
+    
+        .form-control,
+        .form-control-file,
+        .btn {
+            font-size: 1rem;
+            padding: 10px 12px;
+        }
+    
+        .form-control {
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+        }
+    
+        .btn {
+            font-weight: bold;
+            border-radius: 8px;
+           
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+    
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            
+        }
+    
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+    
+        .btn-warning {
+            background-color: #ffc107;
+            color: #fff;
+            border: none;
+        }
+    
+        .btn-warning:hover {
+            background-color: #e0a800;
+            transform: translateY(-2px);
+        }
+    
+        .btn-danger {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+        }
+    
+        .btn-danger:hover {
+            background-color: #c82333;
+            transform: translateY(-2px);
+        }
+    
+        table {
+            font-size: 1rem;
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+    
+        th,
+        td {
+            text-align: center;
+            padding: 12px;
+            vertical-align: middle;
+            border-bottom: 1px solid #ddd;
+        }
+    
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+    
+        .table-dark {
+            background-color: #343a40;
+            color: white;
+        }
+    
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: #f9f9f9;
+        }
+    
+        .table img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+    
+        .table a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    
+        .table a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+    
+        .table-bordered {
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    
+        .form-control-file {
+            padding: 8px;
+            border-radius: 8px;
+        }
+    
+        .form-row {
+            margin-bottom: 15px;
+        }
+    
+        .form-row input,
+        .form-row select,
+        .form-row textarea {
+            border-radius: 8px;
+        }
+    
+        /* Hover Effects */
+        .table-striped tbody tr:hover {
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+    
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .container {
+                margin-top: 30px;
+            }
+    
+            .btn {
+                font-size: 1rem;
+            }
+    
+            .form-control {
+                font-size: 1rem;
+                padding: 8px;
+            }
+    
+            th,
+            td {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+    
+            .table img {
+                width: 45px;
+                height: 45px;
+            }
+        }
+    
+        @media (max-width: 992px) {
+            .container {
+                margin-top: 20px;
+            }
+    
+            .btn {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+    
+            .table img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    
+        @media (max-width: 768px) {
+            .container {
+                margin-top: 15px;
+            }
+    
+            .form-row {
+                display: block;
+                margin-bottom: 20px;
+            }
+    
+            .table img {
+                width: 35px;
+                height: 35px;
+            }
+    
+            .table th,
+            .table td {
+                font-size: 0.85rem;
+                padding: 8px;
+            }
+        }
+    
+        @media (max-width: 576px) {
+            .container {
+                margin-top: 10px;
+            }
+    
+            .form-control {
+                font-size: 1rem;
+                padding: 12px;
+            }
+    
+            .btn {
+                font-size: 1.1rem;
+                padding: 12px 20px;
+            }
+    
+            .table th,
+            .table td {
+                font-size: 0.75rem;
+                padding: 6px;
+            }
+    
+            .table img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            .container {
+                margin-top: 10px;
+            }
+    
+            .table th,
+            .table td {
+                font-size: 0.7rem;
+                padding: 4px;
+            }
+    
+            .table img {
+                width: 25px;
+                height: 25px;
+            }
+    
+            .form-control {
+                font-size: 1.2rem;
+                padding: 14px;
+            }
+    
+            .btn {
+                font-size: 1.2rem;
+                padding: 14px 25px;
+            }
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="text-center mb-4">Admin Panel</h2>
+       
+
+        <form id="adminForm" class="mb-4" enctype="multipart/form-data">
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <input type="text" id="name" class="form-control" placeholder="Name" required>
+                </div>
+                <div class="col-md-3">
+                    <input type="file" id="profilePic" class="form-control-file" accept="image/*">
+                </div>
+                <div class="col-md-3">
+                    <input type="text" id="role" class="form-control" placeholder="Role" required>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" id="businessName" class="form-control" placeholder="Business Name" required>
+                </div>
+                <div class="col-md-3">
+                    <select id="category" class="form-control" required>
+                        <option value="">Select Category</option>
+                        <option value="Food & Beverage">Food & Beverage</option>
+                        <option value="Construction">Construction</option>
+                        <option value="Education">Education</option>
+                        <option value="IT Services">IT Services</option>
+                        <option value="Retail">Retail</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <input type="number" id="yearOfJoining" class="form-control" placeholder="Year of Joining" required>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" id="address" class="form-control" placeholder="Address" required>
+                </div>
+                <div class="col-md-3">
+                    <input type="tel" id="phoneNumber" class="form-control" placeholder="Phone Number" required>
+                </div>
+                <div class="col-md-3">
+                    <textarea id="businessDetails" class="form-control" placeholder="Business Details" rows="1" required></textarea>
+                </div>
+                <div class="col-md-3">
+                    <input type="url" id="websiteLink" class="form-control" placeholder="Website Link">
+                </div>
+                <div class="col-md-3">
+                    <input type="file" id="images" class="form-control-file" accept="image/*" multiple>
+                </div>
+                
+                <div class="col-md-3">
+                    <button type="submit" id="saveButton" class="btn btn-primary w-100">Save</button>
+                </div>
+            </div>
+        </form>
+
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Profile Pic</th>
+                    <th>Role</th>
+                    <th>Business Name</th>
+                    <th>Category</th>
+                    <th>Year</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Details</th>
+                    <th>Website</th>
+                    <th>Business lmage</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="adminTableBody">
+                <tr>
+                    <td colspan="12" class="text-center">No entries yet.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const form = document.getElementById('adminForm');
+        const tableBody = document.getElementById('adminTableBody');
+        const saveButton = document.getElementById('saveButton');
+        let editIndex = -1;
+
+        // Function to update the table with the data from localStorage
+        const updateTable = () => {
+            const data = JSON.parse(localStorage.getItem('adminData')) || [];
+
+            tableBody.innerHTML = data.length
+                ? data.map((entry, index) => `
+                    <tr>
+                        <td>${entry.name}</td>
+                        <td><img src="${entry.profilePic}" alt="Profile"></td>
+                        <td>${entry.role}</td>
+                        <td>${entry.businessName}</td>
+                        <td>${entry.category}</td>
+                        <td>${entry.yearOfJoining}</td>
+                        <td>${entry.address}</td>
+                        <td>${entry.phoneNumber}</td>
+                        <td>${entry.businessDetails}</td>
+                        <td><a href="${entry.websiteLink}" target="_blank">Website</a></td>
+                        <td>${entry.images.map(img => `<img src="${img}" alt="Image">`).join('')}</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm" onclick="editEntry(${index})"><i class="fa-solid fa-pen-to-square fa-xl" style="color: #ffffff;"></i></button>
+                            <button class="btn btn-danger btn-sm" onclick="deleteEntry(${index})"><i class="fa-solid fa-trash-can fa-xl" style="color: #ffffff;"></i></button>
+                        </td>
+                    </tr>`).join('')
+                : '<tr><td colspan="12" class="text-center">No entries yet.</td></tr>';
+        };
+
+        // Function to add or update an entry
+        const addEntry = (e) => {
+            e.preventDefault();
+
+            const data = JSON.parse(localStorage.getItem('adminData')) || [];
+            const profilePicFile = document.getElementById('profilePic').files[0];
+            const imageFiles = document.getElementById('images').files;
+
+            if (!profilePicFile) return alert('Please upload a profile picture');
+            if (imageFiles.length === 0) return alert('Please upload at least one image');
+
+            const reader = new FileReader();
+            reader.onloadend = function () {
+                const imagesBase64 = [];
+                const imageReaders = [];
+                let imageCount = 0;
+
+                for (let i = 0; i < imageFiles.length; i++) {
+                    imageReaders[i] = new FileReader();
+                    imageReaders[i].onloadend = function () {
+                        imagesBase64.push(imageReaders[i].result);
+                        imageCount++;
+
+                        if (imageCount === imageFiles.length) {
+                            const newEntry = {
+                                name: document.getElementById('name').value,
+                                profilePic: reader.result,
+                                role: document.getElementById('role').value,
+                                businessName: document.getElementById('businessName').value,
+                                category: document.getElementById('category').value,
+                                yearOfJoining: document.getElementById('yearOfJoining').value,
+                                address: document.getElementById('address').value,
+                                phoneNumber: document.getElementById('phoneNumber').value,
+                                businessDetails: document.getElementById('businessDetails').value,
+                                websiteLink: document.getElementById('websiteLink').value,
+                                images: imagesBase64
+                            };
+
+                            if (editIndex === -1) {
+                                data.unshift(newEntry); // Add new entry at the top
+                            } else {
+                                data[editIndex] = newEntry; // Update existing entry
+                                editIndex = -1;
+                            }
+
+                            localStorage.setItem('adminData', JSON.stringify(data));
+                            form.reset();
+                            updateTable();
+                        }
+                    };
+
+                    imageReaders[i].readAsDataURL(imageFiles[i]);
+                }
+            };
+
+            reader.readAsDataURL(profilePicFile);
+        };
+
+        // Function to edit an entry
+        const editEntry = (index) => {
+            const data = JSON.parse(localStorage.getItem('adminData')) || [];
+            const entry = data[index];
+
+            document.getElementById('name').value = entry.name;
+            document.getElementById('profilePic').files[0] = entry.profilePic;
+            document.getElementById('role').value = entry.role;
+            document.getElementById('businessName').value = entry.businessName;
+            document.getElementById('category').value = entry.category;
+            document.getElementById('yearOfJoining').value = entry.yearOfJoining;
+            document.getElementById('address').value = entry.address;
+            document.getElementById('phoneNumber').value = entry.phoneNumber;
+            document.getElementById('businessDetails').value = entry.businessDetails;
+            document.getElementById('websiteLink').value = entry.websiteLink;
+            editIndex = index;
+        };
+
+        // Function to delete an entry
+        const deleteEntry = (index) => {
+            const data = JSON.parse(localStorage.getItem('adminData')) || [];
+            data.splice(index, 1);
+            localStorage.setItem('adminData', JSON.stringify(data));
+            updateTable();
+        };
+
+        form.addEventListener('submit', addEntry);
+
+        // Update the table on page load
+        window.onload = updateTable;
+    </script>
+</body>
+
+</html>

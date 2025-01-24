@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    /* Global reset */
+
+/* Full height section with flexbox */
+.custom-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  background-image: linear-gradient(90deg, #ffffff 62%, rgb(8, 30, 83) 62%) !important;
+}
+
+.custom-container {
+  width: 100%;
+  max-width: 1200px;
+  line-height: 1.5;
+  padding: 0 15px;
+}
+
+/* Row with two columns */
+.custom-row {
+  display: flex;
+
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Left Column with text */
+.custom-column-left {
+  flex: 1;
+  padding-right: 50px;
+  /* Space between text and image */
+  max-width: 60%;
+  /* Takes up 60% of the row */
+}
+
+.custom-subtitle {
+  font-size: 12px;
+  color: #3e3e3e;
+  /* Gray color for subtitle */
+  /* font-weight: bold; */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.custom-title {
+  /* font-size: 60px;
+  font-weight: 500; */
+  color: #1e1e1e;
+  /* Dark color for title */
+  margin-bottom: 20px;
+  font-size: 72px;
+  line-height: 1.1em;
+}
+
+.custom-description {
+  font-size: 18px;
+  color: #6a6a6a;
+  /* Light gray for body text */
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.custom-btn {
+  display: inline-block;
+  font-size: 16px;
+  padding: 12px 30px;
+  color: white;
+  background-color: #0056b3;
+  /* Blue background for button */
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #fcb900;
+  /* Darker blue on hover */
+}
+
+/* Right Column with Image as background */
+.custom-column-right {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  position: relative;
+  /* For overlay positioning */
+}
+
+img {
+  position: relative;
+
+  width: 100%;
+  height: auto;
+
+}
+
+.custom-overlay {
+  position: absolute;
+  margin-top: 30px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  /* Semi-transparent black overlay */
+  z-index: 1;
+}
+
+.custom-overlay img {
+  padding: 60px;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+
+  .custom-section {
+
+    background-image: linear-gradient(90deg, #ffffff 62%, rgb(8, 30, 83) 62%) !important;
+  }
+
+  .custom-row {
+    flex-direction: column;
+    /* Stack the columns on smaller screens */
+  }
+
+  .custom-column-left,
+  .custom-column-right {
+    max-width: 100%;
+    padding-right: 0;
+  }
+
+  .custom-title {
+    font-size: 36px;
+    color: rgb(0, 0, 0);
+    /* Reduce font size of title on small screens */
+  }
+
+  .custom-description {
+    font-size: 16px;
+    /* Reduce description text size */
+  }
+
+  .custom-btn {
+    font-size: 14px;
+    /* Reduce button font size */
+    padding: 10px 25px;
+  }
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  .custom-overlay img {
+    padding: 0px;
+  }
+
+  .custom-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    background-image: linear-gradient(90deg, #ffffff 90%, rgb(8, 30, 83) 90%) !important;
+  }
+}
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html" >
+                <img src="photos/nav-logo.webp" alt="JCI Nagercoil Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="/about.html">Programs</a></li>
+                            <li><a class="dropdown-item" href="board.html">Board of Directors</a></li>
+                            <li><a class="dropdown-item" href="jclnagarcoil.html">JCI Nagercoil HQ</a></li>
+                            <li><a class="dropdown-item" href="local.html">Local Organisations</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="NDC.html" id="edcDropdown" >NDC</a>
+                        <ul class="dropdown-menu" aria-labelledby="edcDropdown">
+                            <li><a class="dropdown-item" href="skils.html">Skills Development <br> Platform</a></li>
+                            <li><a class="dropdown-item" href="Intensive.html">Intensive Support</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Programs & Events</a>
+                        <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+                            <li><a class="dropdown-item" href="Conference.html">Conference 2025</a></li>
+                            <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Jaycees.html">Jaycees Business</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <div class="social-icons me-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <a href="https://forms.gle/DhApTj8NEo9AmUsP9" class="contact-btn ">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js "></script>
+
+</html>
